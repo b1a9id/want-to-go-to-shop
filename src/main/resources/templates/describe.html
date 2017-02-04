@@ -1,0 +1,94 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script type="text/javascript" th:src="@{webjars/jquery/3.1.1-1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/header.js}"></script>
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<header id="header" class="navbar">
+	<div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">行きたいお店</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-ex-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active">
+						<a href="#">一覧へ</a>
+					</li>
+					<li>
+						<a href="#">登録</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>定食屋５</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table">
+						<tbody>
+						<tr>
+							<th>ジャンル</th>
+							<td>和食</td>
+						</tr>
+						<tr>
+							<th>店名</th>
+							<td>定食屋５</td>
+						</tr>
+						<tr>
+							<th>最寄駅</th>
+							<td>渋谷駅</td>
+						</tr>
+						<tr>
+							<th>URL</th>
+							<td>http://teisyoku-5.co.jp</td>
+						</tr>
+						<tr>
+							<th>メモ</th>
+							<td>馬刺しが有名</td>
+						</tr>
+						<tr>
+							<th>登録日</th>
+							<td>2017/01/10</td>
+						</tr>
+						<tr>
+							<th>訪問日</th>
+							<td>2017/01/20</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="btn-group">
+						<a href="#" class="btn btn-danger">編集</a>
+						<a href="#" class="btn btn-default">戻る</a>
+						<a href="#" class="btn btn-primary">削除</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

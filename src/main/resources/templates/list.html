@@ -1,0 +1,106 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script type="text/javascript" th:src="@{webjars/jquery/3.1.1-1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/header.js}"></script>
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.css}" rel="stylesheet" type="text/css" />
+</head>
+<body data-spy="scroll">
+	<div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+				        data-target="#navbar-ex-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">行きたいお店</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-ex-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active">
+						<a href="#">一覧へ</a>
+					</li>
+					<li>
+						<a href="#">登録</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar"
+						     style="width: 60%;">60% Complete
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table">
+						<thead>
+						<tr>
+							<th>#</th>
+							<th>店名</th>
+							<th>最寄駅</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>1</td>
+							<td>定食屋１</td>
+							<td>渋谷</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>トラットリアイルミナンテ　品川店</td>
+							<td>品川</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>中華１</td>
+							<td>元町・中華街</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>イタリアン２</td>
+							<td>新宿</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>フレンチ３</td>
+							<td>代官山</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>パン屋１</td>
+							<td>代々木上原</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>定食屋２</td>
+							<td>浅草</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
