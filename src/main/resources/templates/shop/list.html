@@ -1,0 +1,87 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.1.1-1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/header.js}"></script>
+	<script type="text/javascript" th:src="@{/js/common.js}"></script>
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.css}" rel="stylesheet" type="text/css" />
+</head>
+<body data-spy="scroll">
+	<div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">行きたいお店</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-ex-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a th:href="@{/shops}">一覧へ</a></li>
+					<li><a th:href="@{/shops/create}">登録</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" th:style="'width:' +  ${visitedNum} + '%;'">
+							<span th:text="|${visitedNum}% Complete|"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<table class="table">
+							<thead>
+							<tr>
+								<th>#</th>
+								<th>ジャンル</th>
+								<th>店名</th>
+								<th></th>
+								<th></th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr th:classappend="${shop.visitedAt}?'active'" th:each="shop, stat : ${shops}">
+								<td th:text="${stat.index}"></td>
+								<td th:text="#{|shop.field.genre.${shop.genre}|}"></td>
+								<td><a th:href="@{/shops/describe/{id}(id=${shop.id})}" th:text="${shop.shopName}"></a></td>
+								<td>
+									<div>
+										<a class="btn btn-default glyphicon glyphicon-ok" th:classappend="${shop.visitedAt}?'disabled'" th:href="@{/shops/visited/{id}(id=${shop.id})}" role="button"></a>
+									</div>
+								</td>
+								<td>
+									<form method="post" th:action="@{/shops/delete/{id}(id=${shop.id})}">
+										<input type="hidden" name="_method" value="delete"/>
+										<button class="btn btn-default glyphicon glyphicon-trash" th:classappend="${shop.visitedAt}?'dis-btn'" type="submit"></button>
+									</form>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
