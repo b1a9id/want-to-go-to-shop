@@ -94,6 +94,20 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Hierarchical Context Runner -->
+		<dependency>
+			<groupId>de.bechte.junit</groupId>
+			<artifactId>junit-hierarchicalcontextrunner</artifactId>
+			<version>4.12.1</version>
+		</dependency>
+
+		<!-- Assert J -->
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.6.2</version>
+		</dependency>
+
 		<!-- Jquery -->
 		<dependency>
 			<groupId>org.webjars</groupId>
