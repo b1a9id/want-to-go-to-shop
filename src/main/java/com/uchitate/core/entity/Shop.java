@@ -2,10 +2,12 @@ package com.uchitate.core.entity;
 
 import com.uchitate.web.support.Genre;
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.Setter;
+import org.hibernate.search.annotations.*;
+import org.hibernate.search.annotations.Index;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Table(name = "shop")
+@Indexed
 public class Shop implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +24,11 @@ public class Shop implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Genre genre;
 
-	@NonNull
+	@NotNull
+	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
 	private String shopName;
 
+	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
 	private String station;
 
 	private String url;
