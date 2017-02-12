@@ -23,21 +23,26 @@ public class ShopListController {
 	@Autowired
 	private ShopService shopService;
 
-	@GetMapping
-	public String list(Model model) {
-		List<Shop> shops = shopService.getAllShops();
-		Long visitedShops = shops.stream()
-				.filter(shop -> Objects.nonNull(shop.getVisitedAt()))
-				.count();
-		BigDecimal visitedNum = shops.size() == 0 ? BigDecimal.ZERO : BigDecimal.valueOf(visitedShops * 100 / shops.size());
-
-		model.addAttribute("shops", shops);
-		model.addAttribute("visitedNum", visitedNum);
-
-		return "shop/list";
+	@ModelAttribute("form")
+	public ShopSearchForm setupShopSearchForm() {
+		return new ShopSearchForm();
 	}
 
-	@GetMapping("/keyword")
+//	@GetMapping
+//	public String list(Model model) {
+//		List<Shop> shops = shopService.getAllShops();
+//		Long visitedShops = shops.stream()
+//				.filter(shop -> Objects.nonNull(shop.getVisitedAt()))
+//				.count();
+//		BigDecimal visitedNum = shops.size() == 0 ? BigDecimal.ZERO : BigDecimal.valueOf(visitedShops * 100 / shops.size());
+//
+//		model.addAttribute("shops", shops);
+//		model.addAttribute("visitedNum", visitedNum);
+//
+//		return "shop/list";
+//	}
+
+	@GetMapping
 	public String search(
 			@Validated @ModelAttribute ShopSearchForm form,
 			BindingResult result,

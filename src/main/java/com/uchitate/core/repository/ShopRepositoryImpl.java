@@ -27,8 +27,6 @@ public class ShopRepositoryImpl implements ShopRepositoryCustom {
 	}
 
 	private javax.persistence.Query getQuery(ShopSearchRequest request) {
-		request.setKeyword("shibuya");
-
 		FullTextEntityManager fullTextEntityManager = Search.getFullTextEntityManager(entityManager);
 		QueryBuilder qb = fullTextEntityManager.getSearchFactory()
 				.buildQueryBuilder()

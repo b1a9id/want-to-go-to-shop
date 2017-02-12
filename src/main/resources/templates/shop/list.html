@@ -33,6 +33,20 @@
 	</div>
 	<div class="section">
 		<div class="container">
+			<form class="form-inline" th:object="${form}">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<input class="form-control" th:field="*{keyword}" type="text" placeholder="キーワード"/>
+						</div>
+						<button type="submit" class="btn btn-primary btn-search">検索</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="progress">
