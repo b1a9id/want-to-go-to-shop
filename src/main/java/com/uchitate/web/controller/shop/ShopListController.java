@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 
@@ -24,7 +25,7 @@ public class ShopListController {
 		Long visitedShops = shops.stream()
 				.filter(shop -> Objects.nonNull(shop.getVisitedAt()))
 				.count();
-		double visitedNum =  visitedShops * 100 / shops.size();
+		BigDecimal visitedNum = shops.size() == 0 ? BigDecimal.ZERO : BigDecimal.valueOf(visitedShops * 100 / shops.size());
 
 		model.addAttribute("shops", shops);
 		model.addAttribute("visitedNum", visitedNum);
