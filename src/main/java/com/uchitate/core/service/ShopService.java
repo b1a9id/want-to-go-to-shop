@@ -1,6 +1,7 @@
 package com.uchitate.core.service;
 
 import com.uchitate.core.entity.Shop;
+import com.uchitate.core.model.ShopSearchRequest;
 import com.uchitate.core.repository.ShopRepository;
 import com.uchitate.web.support.ShopCreateRequest;
 import com.uchitate.web.support.ShopEditRequest;
@@ -18,6 +19,10 @@ public class ShopService {
 
 	public List<Shop> getAllShops() {
 		return shopRepository.findAll();
+	}
+
+	public List<Shop> search(ShopSearchRequest request) {
+		return shopRepository.search(request);
 	}
 
 	public Shop getShop(Integer id) {

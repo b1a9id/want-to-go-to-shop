@@ -1,7 +1,6 @@
 package com.uchitate.web.controller.shop;
 
 import com.uchitate.core.entity.Shop;
-import com.uchitate.core.model.ShopCreateForm;
 import com.uchitate.core.service.ShopService;
 import com.uchitate.web.support.Genre;
 import org.springframework.beans.factory.annotation.Autowired;

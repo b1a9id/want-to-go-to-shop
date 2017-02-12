@@ -1,4 +1,4 @@
-package com.uchitate.core.model;
+package com.uchitate.web.controller.shop;
 
 import com.uchitate.web.support.Genre;
 import com.uchitate.web.support.ShopCreateRequest;
