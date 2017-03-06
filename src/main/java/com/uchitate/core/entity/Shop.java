@@ -22,6 +22,7 @@ public class Shop implements Serializable {
 	private Integer id;
 
 	@Enumerated(EnumType.STRING)
+	@Field
 	private Genre genre;
 
 	@NotNull

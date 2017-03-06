@@ -1,5 +1,6 @@
 package com.uchitate.core.model;
 
+import com.uchitate.web.support.Genre;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,4 +9,6 @@ import lombok.Setter;
 public class ShopSearchRequest {
 
 	private String keyword;
+
+	private Genre genre;
 }

@@ -41,6 +41,11 @@ public class ShopRepositoryImpl implements ShopRepositoryCustom {
 			junction.must(qb.keyword().onFields("shopName", "station").matching(request.getKeyword()).createQuery());
 		}
 
+		// ジャンル
+		if (request.getGenre() != null) {
+			junction.must(qb.keyword().onField("genre").matching(request.getGenre()).createQuery());
+		}
+
 		Query searchQuery = junction.createQuery();
 
 //		Query luceneQuery = qb

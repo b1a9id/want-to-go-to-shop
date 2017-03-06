@@ -39,6 +39,12 @@
 						<div class="form-group">
 							<input class="form-control" th:field="*{keyword}" type="text" placeholder="キーワード"/>
 						</div>
+						<div class="form-group">
+							<select class="form-control" th:field="*{genre}">
+								<option value="">ジャンルを選択</option>
+								<option th:each="genre : ${genres}" th:text="#{|shop.field.genre.${genre}|}" th:value="${genre}"></option>
+							</select>
+						</div>
 						<button type="submit" class="btn btn-primary btn-search">検索</button>
 					</div>
 				</div>

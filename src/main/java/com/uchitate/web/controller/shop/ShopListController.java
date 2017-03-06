@@ -2,6 +2,7 @@ package com.uchitate.web.controller.shop;
 
 import com.uchitate.core.entity.Shop;
 import com.uchitate.core.service.ShopService;
+import com.uchitate.web.support.Genre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,24 +24,15 @@ public class ShopListController {
 	@Autowired
 	private ShopService shopService;
 
+	@ModelAttribute("genres")
+	public Genre[] setupGenres() {
+		return Genre.values();
+	}
+
 	@ModelAttribute("form")
 	public ShopSearchForm setupShopSearchForm() {
 		return new ShopSearchForm();
 	}
-
-//	@GetMapping
-//	public String list(Model model) {
-//		List<Shop> shops = shopService.getAllShops();
-//		Long visitedShops = shops.stream()
-//				.filter(shop -> Objects.nonNull(shop.getVisitedAt()))
-//				.count();
-//		BigDecimal visitedNum = shops.size() == 0 ? BigDecimal.ZERO : BigDecimal.valueOf(visitedShops * 100 / shops.size());
-//
-//		model.addAttribute("shops", shops);
-//		model.addAttribute("visitedNum", visitedNum);
-//
-//		return "shop/list";
-//	}
 
 	@GetMapping
 	public String search(
