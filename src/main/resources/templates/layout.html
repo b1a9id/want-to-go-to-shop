@@ -10,7 +10,7 @@
 	<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.css}" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<div class="navbar navbar-default navbar-static-top">
+	<div th:fragment="header-index" class="navbar navbar-default navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
@@ -24,10 +24,10 @@
 			<div class="collapse navbar-collapse" id="navbar-ex-collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active">
-						<a href="#">一覧へ</a>
+						<a th:href="@{/}">一覧へ</a>
 					</li>
 					<li>
-						<a href="#">登録</a>
+						<a th:href="@{create}">登録</a>
 					</li>
 				</ul>
 			</div>
