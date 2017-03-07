@@ -46,6 +46,7 @@ public class ShopListController {
 				.count();
 		BigDecimal visitedNum = shops.size() == 0 ? BigDecimal.ZERO : BigDecimal.valueOf(visitedShops * 100 / shops.size());
 
+		model.addAttribute("form", form);
 		model.addAttribute("shops", shops);
 		model.addAttribute("visitedNum", visitedNum);
 
