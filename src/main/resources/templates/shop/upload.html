@@ -1,0 +1,42 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.1.1-1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+	<link th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div th:replace="layout::header-index"></div>
+		<form id="form" enctype="multipart/form-data">
+			<p><input type="file" name="file" /></p>
+			<p><input type="button" id="upload" value="upload"/></p>
+		</form>
+		<span id="result" style="padding: 3px;"></span>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			// アップロードボタンが押されたら実行。
+			$('#upload').click(function() {
+				var formData = new FormData(
+					$('#form').get()[0]
+				);
+				$.ajax({
+					url:'/upload',
+					method:'post',
+					data:formData,
+					processData:false,
+					contentType:false,
+					cache: false
+				}).done(function(data, status, jqxhr) {
+					$('#result').text('結果：成功');
+				}).fail(function(data, status, jqxhr) {
+					$('#result').text('結果：失敗');
+				});
+			});
+		});
+	</script>
+</html>

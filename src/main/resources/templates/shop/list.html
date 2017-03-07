@@ -62,7 +62,7 @@
 							</thead>
 							<tbody>
 							<tr th:classappend="${shop.visitedAt}?'active'" th:each="shop, stat : ${shops}">
-								<td th:text="${stat.index}"></td>
+								<td th:text="${stat.index + 1}"></td>
 								<td th:text="#{|shop.field.genre.${shop.genre}|}"></td>
 								<td><a th:href="@{/shops/describe/{id}(id=${shop.id})}" th:text="${shop.shopName}"></a></td>
 								<td>

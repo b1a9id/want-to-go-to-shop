@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.format.DateTimeFormatter;
+
 @Controller
 @RequestMapping("/shops/edit/{id}")
 public class ShopEditController {
@@ -35,6 +37,10 @@ public class ShopEditController {
 
 		model.addAttribute("form", form);
 		model.addAttribute("id", id);
+
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy年MM月dd日");
+		String createdAt = shop.getCreatedAt().toLocalDate().format(formatter);
+		model.addAttribute("createdAt", createdAt);
 		return "shop/edit";
 	}
 
