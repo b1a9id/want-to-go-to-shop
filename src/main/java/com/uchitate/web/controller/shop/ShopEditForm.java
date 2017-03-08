@@ -5,6 +5,7 @@ import com.uchitate.web.support.ShopEditRequest;
 import lombok.*;
 import org.hibernate.validator.constraints.URL;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Getter
@@ -15,7 +16,7 @@ public class ShopEditForm implements Serializable {
 
 	private Genre genre;
 
-	@NonNull
+	@NotNull
 	private String shopName;
 
 	private String station;
