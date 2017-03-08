@@ -3,19 +3,20 @@ package com.uchitate.web.controller.shop;
 import com.uchitate.web.support.Genre;
 import com.uchitate.web.support.ShopCreateRequest;
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.Setter;
 import org.hibernate.validator.constraints.URL;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Getter
 @Setter
 public class ShopCreateForm implements Serializable {
 
+	@NotNull
 	private Genre genre;
 
-	@NonNull
+	@NotNull
 	private String shopName;
 
 	private String station;
