@@ -2,7 +2,6 @@ package com.uchitate.web.controller.shop;
 
 import com.uchitate.core.entity.Shop;
 import com.uchitate.core.service.ShopService;
-import com.uchitate.web.controller.CommonController;
 import com.uchitate.web.support.Genre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/shops/create")
-public class ShopCreateController extends CommonController {
+public class ShopCreateController {
 
 	public static final String FORM_MODEL_KEY = "form";
 	public static final String ERROR_MODEL_KEY = BindingResult.MODEL_KEY_PREFIX + FORM_MODEL_KEY;

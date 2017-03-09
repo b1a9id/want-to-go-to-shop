@@ -2,7 +2,6 @@ package com.uchitate.web.controller.shop;
 
 import com.uchitate.core.entity.Shop;
 import com.uchitate.core.service.ShopService;
-import com.uchitate.web.controller.CommonController;
 import com.uchitate.web.support.Genre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,7 @@ import java.time.format.DateTimeFormatter;
 
 @Controller
 @RequestMapping("/shops/edit/{id}")
-public class ShopEditController extends CommonController {
+public class ShopEditController {
 
 	public static final String FORM_MODEL_KEY = "form";
 	public static final String ERROR_MODEL_KEY = BindingResult.MODEL_KEY_PREFIX + FORM_MODEL_KEY;
@@ -64,6 +63,7 @@ public class ShopEditController extends CommonController {
 			Model model) {
 		redirectAttributes.addFlashAttribute(FORM_MODEL_KEY, form);
 		redirectAttributes.addFlashAttribute(ERROR_MODEL_KEY, result);
+		redirectAttributes.addAttribute("id", id);
 		redirectAttributes.addAttribute("query", query);
 
 			if (result.hasErrors()) {
