@@ -44,10 +44,10 @@
 		</dependency>
 
 		<!-- Spring Security -->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.boot</groupId>-->
-			<!--<artifactId>spring-boot-starter-security</artifactId>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 
 		<!-- Thymeleaf -->
 		<dependency>
@@ -127,6 +127,13 @@
 			<groupId>org.webjars</groupId>
 			<artifactId>font-awesome</artifactId>
 			<version>4.7.0</version>
+		</dependency>
+
+		<!-- Spring Actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<version>1.5.1.RELEASE</version>
 		</dependency>
 
 		<!-- Hibernate-Search -->
